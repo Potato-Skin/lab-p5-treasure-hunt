@@ -4,6 +4,7 @@ class Game {
   }
 
   draw(){
+    clear();
     this.player.draw();
   }
 
@@ -11,6 +12,7 @@ class Game {
     // Iteration 1
     // Draw the grid
     // https://p5js.org/reference/#/p5/line
+    clear();
     line(0, HEIGHT / 10, WIDTH, HEIGHT / 10);
     line(0, (HEIGHT / 10) * 2, WIDTH, (HEIGHT / 10) * 2);
     line(0, (HEIGHT / 10) * 3, WIDTH, (HEIGHT / 10) * 3);
