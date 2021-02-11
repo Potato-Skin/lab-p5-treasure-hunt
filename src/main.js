@@ -6,5 +6,14 @@ function setup() {
 }
 
 function draw() {
-  game.drawGrid();
+  game.draw();
+}
+
+function preload() {
+  playerImage = loadImage("/lab-p5-treasure-hunt/assets/character-down.png");
+  treasureImage = loadImage("/lab-p5-treasure-hunt/assets/treasure.png");
+}
+
+function keyPressed() {
+  game.keyPressed();
 }
