@@ -6,7 +6,7 @@ class Player {
       this.height = SQUARE_SIDE;
   }
   draw() {
-      image(pictureVariable, this.x, this.y, this.width, this.height)
+      image(pictureVariable, this.x, this.y, this.width, this.height);
   }
 
   moveUp(){
