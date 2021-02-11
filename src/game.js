@@ -1,4 +1,7 @@
 class Game {
+  constructor() {
+    this.player = new Player(0, 0)
+  }
   drawGrid() {
     // Iteration 1
     // Draw the grid
@@ -22,6 +25,10 @@ class Game {
     line((WIDTH / 10) * 7, 0, (WIDTH / 10) * 7, HEIGHT);
     line((WIDTH / 10) * 8, 0, (WIDTH / 10) * 8, HEIGHT);
     line((WIDTH / 10) * 9, 0, (WIDTH / 10) * 9, HEIGHT);
+  }
+
+  draw(){
+    this.player.draw();
   }
 }
 
