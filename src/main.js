@@ -6,5 +6,17 @@ function setup() {
 }
 
 function draw() {
+  clear();
   game.drawGrid();
+  game.player.draw();
+  game.treasure.draw();
+}
+
+function preload() {
+  vikingDown = loadImage("./assets/character-down.png");
+  treasure = loadImage("./assets/treasure.png");
+}
+
+function keyPressed() {
+  game.keyPressed();
 }
