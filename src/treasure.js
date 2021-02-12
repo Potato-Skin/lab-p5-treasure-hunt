@@ -1,7 +1,7 @@
 class Treasure {
-    constructor(xPosition, yPosition){
-        this.x = xPosition;
-        this.y = yPosition;
+    constructor(col, row){
+        this.x = col;
+        this.y = row;
         this.width = SQUARE_SIDE;
         this.height = SQUARE_SIDE;
     }
@@ -10,7 +10,7 @@ class Treasure {
     }
 
     setRandomPosition(){
-        this.x = Math.floor(Math.random() * (WIDTH - this.width));
-        this.y = Math.floor(Math.random() * (HEIGHT - this.height));
+        this.x = ((Math.floor(random(10))) * SQUARE_SIDE);
+        this.y = ((Math.floor(random(10))) * SQUARE_SIDE);
     }
 }
