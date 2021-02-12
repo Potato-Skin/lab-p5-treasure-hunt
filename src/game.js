@@ -3,35 +3,33 @@ class Game {
     this.player = new Player(0, 0)
   }
 
-  draw(){
-    clear();
-    this.player.draw();
-  }
-
   drawGrid() {
     // Iteration 1
     // Draw the grid
     // https://p5js.org/reference/#/p5/line
-    clear();
-    line(0, HEIGHT / 10, WIDTH, HEIGHT / 10);
-    line(0, (HEIGHT / 10) * 2, WIDTH, (HEIGHT / 10) * 2);
-    line(0, (HEIGHT / 10) * 3, WIDTH, (HEIGHT / 10) * 3);
-    line(0, (HEIGHT / 10) * 4, WIDTH, (HEIGHT / 10) * 4);
-    line(0, (HEIGHT / 10) * 5, WIDTH, (HEIGHT / 10) * 5);
-    line(0, (HEIGHT / 10) * 6, WIDTH, (HEIGHT / 10) * 6);
-    line(0, (HEIGHT / 10) * 7, WIDTH, (HEIGHT / 10) * 7);
-    line(0, (HEIGHT / 10) * 8, WIDTH, (HEIGHT / 10) * 8);
-    line(0, (HEIGHT / 10) * 9, WIDTH, (HEIGHT / 10) * 9);
-    
-    line(WIDTH / 10, 0, WIDTH / 10, HEIGHT);
-    line((WIDTH / 10) * 2, 0, (WIDTH / 10) * 2, HEIGHT);
-    line((WIDTH / 10) * 3, 0, (WIDTH / 10) * 3, HEIGHT);
-    line((WIDTH / 10) * 4, 0, (WIDTH / 10) * 4, HEIGHT);
-    line((WIDTH / 10) * 5, 0, (WIDTH / 10) * 5, HEIGHT);
-    line((WIDTH / 10) * 6, 0, (WIDTH / 10) * 6, HEIGHT);
-    line((WIDTH / 10) * 7, 0, (WIDTH / 10) * 7, HEIGHT);
-    line((WIDTH / 10) * 8, 0, (WIDTH / 10) * 8, HEIGHT);
-    line((WIDTH / 10) * 9, 0, (WIDTH / 10) * 9, HEIGHT);
+    for(let i = 0; i<=10; i++){
+      line(0, SQUARE_SIDE * i, WIDTH, SQUARE_SIDE * i);
+      line(SQUARE_SIDE * i, 0, SQUARE_SIDE * i, HEIGHT);
+    }
   }
+
+  draw(){
+    this.player.draw();
+  }
+
+  keyPressed(){
+    if (keyCode === 38){
+        this.player.moveUp();
+    }
+    if (keyCode === 40){
+        this.player.moveDown();
+    }
+    if (keyCode === 37){
+        this.player.moveLeft();
+    }
+    if (keyCode === 39){
+        this.player.moveRight();
+    }
+}
 }
 
