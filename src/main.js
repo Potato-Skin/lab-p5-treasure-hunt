@@ -1,7 +1,7 @@
 const game = new Game();
 
 function draw() {
-  clearInterval();
+  clear();
   game.drawGrid();
   game.player.draw();
   game.treasure.draw();

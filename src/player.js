@@ -7,7 +7,13 @@ class Player {
   }
 
   draw() {
-    image(playerDown, this.col * 100, this.row * 100, this.width, this.height);
+    image(
+      playerPicture,
+      this.col * 100,
+      this.row * 100,
+      this.width,
+      this.height
+    );
   }
 
   moveUp() {
