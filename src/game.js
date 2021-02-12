@@ -1,7 +1,8 @@
 class Game {
   constructor() {
     this.player = new Player(0, 0);
-    this.treasure = new Treasure(7, 9);
+    this.treasure = new Treasure(2, 3);
+    this.score = 0;
   }
 
   draw() {
@@ -9,34 +10,26 @@ class Game {
     this.drawGrid();
     this.player.draw();
     this.treasure.draw();
+    if (this.gettingPoints(this.player, this.treasure)) {
+      noLoop();
+      this.score++;
+      score.innerText = this.score;
+      this.treasure.setRandomPosition();
+      loop();
+    }
   }
 
   drawGrid() {
-    line(0, 0, 1000, 0);
-    line(0, 100, 1000, 100);
-    line(0, 200, 1000, 200);
-    line(0, 300, 1000, 300);
-    line(0, 400, 1000, 400);
-    line(0, 500, 1000, 500);
-    line(0, 600, 1000, 600);
-    line(0, 700, 1000, 700);
-    line(0, 800, 1000, 800);
-    line(0, 900, 1000, 900);
-    line(0, 1000, 1000, 1000);
-
-    line(0, 0, 0, 1000);
-    line(100, 0, 100, 1000);
-    line(200, 0, 200, 1000);
-    line(300, 0, 300, 1000);
-    line(400, 0, 400, 1000);
-    line(500, 0, 500, 1000);
-    line(600, 0, 600, 1000);
-    line(700, 0, 700, 1000);
-    line(800, 0, 800, 1000);
-    line(900, 0, 900, 1000);
-    line(1000, 0, 1000, 1000);
-
-    strokeWeight(3);
+    let x;
+    for (x = 0; x <= WIDTH; x += SQUARE_SIDE) {
+      line(0, x, WIDTH, x);
+      strokeWeight(2);
+    }
+    let y;
+    for (y = 0; y <= HEIGHT; y += SQUARE_SIDE) {
+      line(y, 0, y, HEIGHT);
+      strokeWeight(2);
+    }
   }
 
   keyPressed() {
@@ -52,5 +45,18 @@ class Game {
     if (keyCode === 40) {
       this.player.moveDown();
     }
+  }
+
+  gettingPoints(player, treasure) {
+    const isTouchingOnLeft = treasure.x + treasure.width > player.x;
+    const isTouchingOnBottom = treasure.y < player.y + player.height;
+    const isTouchingOnRight = treasure.x < player.x + player.width;
+    const isTouchingOnTop = treasure.y + treasure.height > player.y;
+    return (
+      isTouchingOnLeft &&
+      isTouchingOnBottom &&
+      isTouchingOnRight &&
+      isTouchingOnTop
+    );
   }
 }
