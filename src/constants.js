@@ -3,3 +3,4 @@ const HEIGHT = WIDTH;
 const SQUARE_SIDE = WIDTH / 10;
 
 let pictureVariable;
+let treasureVariable;

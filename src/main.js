@@ -1,7 +1,8 @@
 const game = new Game();
 
 function preload() {
-  pictureVariable = loadImage("../assets/character-down.png")
+  pictureVariable = loadImage("../assets/character-down.png");
+  treasureVariable = loadImage("../assets/treasure.png")
 }
 
 function setup() {
@@ -10,6 +11,10 @@ function setup() {
 }
 
 function draw() {
-  game.drawGrid();
   game.draw();
+  game.drawGrid();
+}
+
+function keyPressed(){
+  game.keyPressed();
 }

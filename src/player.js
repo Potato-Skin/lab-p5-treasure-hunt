@@ -5,7 +5,7 @@ class Player {
       this.width = SQUARE_SIDE;
       this.height = SQUARE_SIDE;
   }
-  
+
   draw() {
       image(pictureVariable, this.x, this.y, this.width, this.height);
   }
