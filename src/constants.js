@@ -1,3 +1,10 @@
 const WIDTH = 1000;
 const HEIGHT = WIDTH;
 const SQUARE_SIDE = WIDTH / 10;
+let characterImageDown;
+let characterImageUp;
+let characterImageLeft;
+let characterImageRight;
+let treasureImage;
+const score1 = document.querySelector("#player1 span");
+const score2 = document.querySelector("#player2 span");
