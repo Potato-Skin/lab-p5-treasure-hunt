@@ -4,8 +4,8 @@ class Treasure {
         this.row = row;
     }
     setRandomPosition() {
-        this.col = random(0, 1000-SQUARE_SIDE);
-        this.row = random(0, 1000-SQUARE_SIDE);
+        this.col = Math.floor(Math.random() * (WIDTH - SQUARE_SIDE)/100)*100;
+        this.row = Math.floor(Math.random() * (WIDTH - SQUARE_SIDE)/100)*100;
     }
 
     drawTreasure() {

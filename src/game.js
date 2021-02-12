@@ -1,6 +1,6 @@
 class Game {
   constructor() {
-    this.player = new Player(0,0);
+    this.player = new Player(0,0, picturePlayerDown);
     this.treasure = new Treasure(500, 500);
     this.score = 0;
   }
@@ -35,7 +35,7 @@ class Game {
 
     const obsTopArea = treasure.col;
     const obsLeftArea = treasure.row;
-    const obsRightArea = treasure.col + SQUARE_SIDE;
+    const obsRightArea = treasure.row + SQUARE_SIDE;
     const obsBottomArea = treasure.col + SQUARE_SIDE;
     const isTouchingOnLeft = obsRightArea > playerLeftArea;
     const isTouchingOnBottom = obsTopArea < playerBottomArea;
