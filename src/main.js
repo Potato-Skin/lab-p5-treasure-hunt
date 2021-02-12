@@ -13,7 +13,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(width, height);
+  let canvas = createCanvas(width, height);
+  canvas.parent("canvas");
 }
 
 function keyPressed() {

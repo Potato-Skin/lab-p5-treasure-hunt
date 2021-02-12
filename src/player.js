@@ -2,18 +2,12 @@ class Player {
   constructor(col, row) {
     this.col = col;
     this.row = row;
-    this.WIDTH = width / 10;
-    this.HEIGHT = height / 10;
+    this.width = width / 10;
+    this.height = height / 10;
   }
 
   draw() {
-    image(
-      playerPicture,
-      this.col * 100,
-      this.row * 100,
-      this.width,
-      this.height
-    );
+    image(playerPicture, this.col, this.row, this.width, this.height);
   }
 
   moveUp() {

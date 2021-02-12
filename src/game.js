@@ -4,14 +4,30 @@ class Game {
     this.treasure = new Treasure(10, 0);
     this.treasure.setRandomPosition();
   }
+  draw() {
+    clear();
+    this.player.draw();
+    this.treasure.draw();
+    if (this.collisionCheck(this.player, this.treasure)) {
+      noLoop();
+      const button = document.createElement("button");
+      button.innerText = "You Won. Let's play again?";
+      button.style.background = "grey";
+      document.body.appendChild(button);
+      button.onclick = () => {
+        this.treasure.setRandomPosition();
+        button.parentNode.removeChild(button);
+        this.score++;
+        score.innerText = this.score;
+        loop();
+      };
+    }
+  }
+
   drawGrid() {
-    for (let x = 0; x <= width; x += width / 10) {
-      for (let y = 0; y <= height; y += height / 10) {
-        stroke(0);
-        strokeWeight(1);
-        line(x, 0, x, height);
-        line(0, y, width, y);
-      }
+    for (let i = 0; i <= 10; i++) {
+      line(0, square_side * i, width, square_side * i);
+      line(square_side * i, 0, square_side * i, height);
     }
   }
   keyPressed() {
