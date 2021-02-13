@@ -2,8 +2,8 @@ class Game {
   constructor() {
     this.treasure = new Treasure(3,3);
     this.treasure.setRandomPosition();
-    this.player1 = new Player(0,0,characterImageDown);
-    this.player2 = new Player(900,0,characterImageDown);
+    this.player1 = new Player(0,0);
+    this.player2 = new Player(900,0);
     this.score1 = 0;
     this.score2 = 0;
   }

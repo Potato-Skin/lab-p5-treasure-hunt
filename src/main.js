@@ -1,7 +1,6 @@
 const game = new Game();
 
 
-
 function draw() {
   game.drawGrid();
 }
@@ -17,9 +16,10 @@ function preload() {
   characterImageDown=loadImage('../assets/character-down.png')
   characterImageLeft=loadImage('../assets/character-left.png')
   characterImageRight=loadImage('../assets/character-right.png')
-  characterImageLeft=loadImage('../assets/character-up.png')
+  characterImageUp=loadImage('../assets/character-up.png')
   treasureImage=loadImage('../assets/treasure.png')
 }
+
 
 function keyPressed() { 
   game.keyPressed() 
